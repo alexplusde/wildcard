@@ -17,27 +17,28 @@ class Wildcard extends rex_yform_manager_dataset
         return $field . $separator . rex_clang::getCurrentId();
     }
 
-    public static function findWildcard(string $wildcard, ?int $clang_id = null)
+    public static function findWildcard(string $wildcard, mixed $clang_code = null)
     {
-        $clang_id ??= rex_clang::getCurrentId();
+    
+        $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
             ->findOne();
         if ($wildcard) {
-            return $wildcard->getText($clang_id);
+            return $wildcard->getText($clang_code);
         }
         return '';
     }
 
-    public static function parse(string $text, ?int $clang_id = null)
+    public static function parse(string $text, ?int $clang_code = null)
     {
         $open_tag = self::getOpenTag();
         $close_tag = self::getCloseTag();
-        $clang_id ??= rex_clang::getCurrentId();
+        $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcards = self::query()
             ->find();
         foreach ($wildcards as $wildcard) {
-            $text = str_replace($open_tag . $wildcard->getWildcard() . $close_tag, $wildcard->getText($clang_id), $text);
+            $text = str_replace($open_tag . $wildcard->getWildcard() . $close_tag, $wildcard->getText($clang_code), $text);
         }
         return $text;
     }
@@ -89,19 +90,19 @@ class Wildcard extends rex_yform_manager_dataset
 
     /* Sprachersetzung */
     /** @api */
-    public function getText($clang_id = null): ?string
+    public function getText(mixed $clang_code = null): ?string
     {
-        if ($clang_id) {
-            return $this->getValue('text_' . $clang_id);
+        if ($clang_code) {
+            return $this->getValue('text_' . $clang_code);
         }
-        return $this->getValue('text_' . rex_clang::getCurrentId());
+        return $this->getValue('text_' . rex_clang::getCurrent()->getCode());
     }
 
     /** @api */
     public function setText(string $wildcard, array $text = []): self
     {
-        foreach ($text as $clang_id => $value) {
-            $this->setValue('text_' . $clang_id, $value);
+        foreach ($text as $clang_code => $value) {
+            $this->setValue('text_' . $clang_code, $value);
         }
         return $this;
     }
