@@ -2,12 +2,12 @@
 
 use Alexplusde\Wildcard;
 
-function wildcard(string $wildcard, ?int $clang_id = null)
+function wildcard(string $wildcard, mixed $clang_code = null)
 {
-    return Wildcard::findWildcard($wildcard, $clang_id);
+    return Wildcard::findWildcard($wildcard, $clang_code);
 }
 
-function ParseWildcards(string $text, ?int $clang_id = null)
+function ParseWildcards(string $text, mixed $clang_code = null)
 {
-    return Wildcard::parse($text, $clang_id);
+    return Wildcard::parse($text, $clang_code);
 }
