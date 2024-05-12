@@ -164,9 +164,17 @@ class Wildcard extends rex_yform_manager_dataset
 
     /* Extension Points */
 
-    public static function clangDeleted(rex_extension_point $ep)
-    {
-        $deleteLang = rex_sql::factory();
-        $deleteLang->setQuery('DELETE FROM ' . rex::getTable('sprog_wildcard') . ' WHERE clang_id=?', [$ep->getParam('clang')->getId()]);
+    public static function removeClangColumn(\rex_extension_point $ep) :void
+    { 
+        $table = \rex_sql_table::get(\rex::getTable('wildcard'));
+        $table->removeColumn($ep->getParam('clang')->getCode());
+        $table->ensure();
     }
+    public static function addClangColumn(\rex_extension_point $ep) :void
+    { 
+        $table = \rex_sql_table::get(\rex::getTable('wildcard'));
+        $table->ensureColumn($ep->getParam('clang')->getCode());
+        $table->ensure();
+    }
+
 }
