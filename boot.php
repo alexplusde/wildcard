@@ -20,7 +20,7 @@ if (rex::isFrontend()) {
     rex_extension::register('OUTPUT_FILTER', 'Alexplusde\Wildcard\Wildcard::replaceWildcards', rex_extension::NORMAL);
 }
 
-if(rex::isBackend() && rex::getUser()) {
-    \rex_extension::register('CLANG_ADDED', 'Alexplusde\Wildcard\Wildcard::addClangColumn');
-    \rex_extension::register('CLANG_DELETED', 'Alexplusde\Wildcard\Wildcard::removeClangColumn');
+if (rex::isBackend() && rex::getUser()) {
+    rex_extension::register('CLANG_ADDED', 'Alexplusde\Wildcard\Wildcard::addClangColumn');
+    rex_extension::register('CLANG_DELETED', 'Alexplusde\Wildcard\Wildcard::removeClangColumn');
 }
