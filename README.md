@@ -1,56 +1,21 @@
-# wildcard - Dieses Repository kopieren, anpassen, AddOn-Entwicklung für REDAXO starten
+# Wildcard -Ersetzungen von Sprach-Platzhaltern in REDAXO neu gedacht
 
-Vorlage für REDAXO-Addons für einen schnelleren Start bei der Addon-Entwicklung.
+Wildcard lässt dich Platzhalter nutzen, die du in deinem Addon oder Theme definierst. Redakteure können dadurch deine Sprachübersetzungen nutzen oder mit eigenen überschreiben. Die Änderungen bleiben dann auch bei einem Update deines Addons erhalten.
 
-1. https://github.com/alexplusde/wildcard/archive/refs/heads/main.zip ZIP der aktuellen Vorlage herunterladen oder direkt in GitHub ein Repo auf Basis von `alexplusde/wildcard` erstellen: https://github.com/new/import und dort `https://github.com/alexplusde/wildcard.git` angeben.
-2. Mit "Suchen und Ersetzen" alles, was `wildcard` heißt, durch den Namen deines Addons ersetzen, z.B. `supi-dupi-kalender`, und speichern. Sowohl Dateinamen, als auch Dateiinhalte. 
-3. Alles löschen, was du aktuell nicht brauchst (oder für später auskommentiert lassen)
+## Geplante Features
 
-## Features
+* Einfache Verwaltung durch YForm: Exportieren und importieren von Sprachdateien
+* Automatische Erkennung von Sprachdateien in Addons (Verzeichnis: `package/wildcard/de_de.lang`)
+* Kombination mit YForm_Inline-Addon für eine einfachere Bearbeitung
 
-### `package.yml`
+## Voraussetzungen
 
-Bei Bedarf Abhängigkeiten von REDAXO-AddOns (sog. packages) eintragen, Backend-Seiten aus oder einblenden, vordefinierte Konfigurationswerte setzen.
+* Sprachkürzel  `de_de` oder `en_gb` in REDAXO-Sprachen hinterlegt
 
-### `boot.php`
+## Einstellungs-Seite
 
-Gängige Code-Beispiele wie der Syntax zum Überprüfen einer Addon-Installation, der Unterscheidung zwischen Front- und Backend, dem Registrieren eigener YForm-Dataset-Klasen.
-
-### `install.php`
-
-Gängige Code-Beispiele zum Installieren von YForm-Tablesets, Meta-Infofeldern und dem Verwenden von Extension Points, Cronjobs u.a.
-
-### `rex_wildcard.tableset.json` und `pages/wildcard.table.php` für YForm im Addon
-
-Dein Addon nutzt YForm als Ausgangsbasis? Importiere bei der Installation dein Tableset und nutze YForm-Tabellen innerhalb deiner Addon-Seiten.
-
-### `update.php`
-
-Gängige Code-Beispiele, die in Abhängigkeit der Vorgänger-Version deines Addons ausgeführt werden.
-
-### `uninstall.php`
-
-Alle Code-Beispiele, die du in der `install.php` nutzt, können hier wieder rückkgängig gemacht werden.
-
-### `lib/wildcard.php`
-
-Liefere passende YOrm Dataset-Methoden mit deinem Addon. Diese kannst du dir ganz einfach mithilfe von <https://github.com/alexplusde/ymca> erstellen lassen, wenn dein Tableset soweit fertig ist.
-
-### `lang/`
-
-wildcard für deine eigene Sprachdatei. Beginne die Addon-Entwicklung direkt so, dass weitere Sprachen ohne Anpassungen ergänzt werden können.
-
-### `fragments/`
-
-wildcard für die Nutzung eigener Fragmente.
-
-### Docs-Seite
-
-Passe diese README.md-Datei an und spiele sie als Hilfe-Seite zu deinem Addon aus. Halte dich an die Struktur dieser README.md-Datei für deine eigenen Addons, indem du die wichtigsten Funktionen, Klassen und Methoden sowie den Installationsprozess und die Funktionsweise erklärst. Mit Verweis auf die Autoren, Projekt-Lead und Credits.
-
-### Einstellungs-Seite
-
-Beginne mit einem Konfigurations-Formular, das bereits best practice in REDAXO umsetzt - mit Links zu den wichtigsten API-Docs.
+* Geplant: Sprog-Modus (Standard): Platzhalter von Sprog werden ergänzt für eine einfachere Migration von Sprog zu Wildcard
+* Eigene Start-End-Marker setzen, z.B. `{{` und `}}` oder `[[` und `]]`.
 
 ## Lizenz
 
@@ -59,10 +24,8 @@ MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/wildcard/blob/maste
 ## Autoren
 
 **Alexander Walther**  
-http://www.alexplus.de  
-https://github.com/alexplusde  
+<http://www.alexplus.de>  
+<https://github.com/alexplusde>  
 
 **Projekt-Lead**  
 [Alexander Walther](https://github.com/alexplusde)
-
-## Credits
