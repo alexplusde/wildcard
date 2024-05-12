@@ -1,4 +1,4 @@
-# Wildcard -Ersetzungen von Sprach-Platzhaltern in REDAXO neu gedacht
+# Wildcard - Ersetzungen von Sprach-Platzhaltern in REDAXO neu gedacht
 
 Wildcard lässt dich Platzhalter nutzen, die du in deinem Addon oder Theme definierst. Redakteure können dadurch deine Sprachübersetzungen nutzen oder mit eigenen überschreiben. Die Änderungen bleiben dann auch bei einem Update deines Addons erhalten.
 
@@ -7,6 +7,7 @@ Wildcard lässt dich Platzhalter nutzen, die du in deinem Addon oder Theme defin
 * Einfache Verwaltung durch YForm: Exportieren und importieren von Sprachdateien
 * Automatische Erkennung von Sprachdateien in Addons (Verzeichnis: `package/wildcard/de_de.lang`)
 * Kombination mit YForm_Inline-Addon für eine einfachere Bearbeitung
+* Unterstützung von Cloud-Übersetzungstools
 
 ## Voraussetzungen
 

@@ -19,7 +19,6 @@ class Wildcard extends rex_yform_manager_dataset
 
     public static function findWildcard(string $wildcard, mixed $clang_code = null)
     {
-    
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
