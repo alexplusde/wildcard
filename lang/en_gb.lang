@@ -1,0 +1,24 @@
+wildcard_title = Languages
+
+wildcard_table = 🎴 Languages
+wildcard_settings = Settings
+wildcard_docs = Help
+
+# Configuration forms
+wildcard_config = Settings
+wildcard_config_starttag_label = Start Marker
+wildcard_config_starttag_notice = e.g. <code>{{ </code>
+wildcard_config_endtag_label = End Marker
+wildcard_config_endtag_notice = e.g. <code> }}</code>
+
+# YForm Table Translation
+wildcard_package = Package (AddOn)
+wildcard_wildcard = Placeholder
+wildcard_text_de = DE
+wildcard_text_en = EN
+wildcard_text_fr = FR
+wildcard_text_es = ES
+wildcard_createdate = Created on...
+wildcard_createuser = Created by...
+wildcard_updatedate = Last modified on...
+wildcard_updateuser = Last modified by...

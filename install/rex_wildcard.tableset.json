@@ -59,22 +59,6 @@
             },
             {
                 "table_name": "rex_wildcard",
-                "prio": 3,
-                "type_id": "value",
-                "type_name": "textarea",
-                "db_type": "text",
-                "list_hidden": 0,
-                "search": 0,
-                "name": "text_1",
-                "label": "translate:wildcard_text_1",
-                "not_required": "",
-                "attributes": "",
-                "default": "",
-                "no_db": "0",
-                "notice": ""
-            },
-            {
-                "table_name": "rex_wildcard",
                 "prio": 4,
                 "type_id": "value",
                 "type_name": "datestamp",

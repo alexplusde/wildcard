@@ -4,22 +4,20 @@ wildcard_table = 🎴 Sprachen
 wildcard_settings = Einstellungen
 wildcard_docs = Hilfe
 
-# FriendsOfREDAXO-Addons können bei YTraduco zur Übersetzung eingereicht werden
-
 # Konfigurationsformulare
 wildcard_config = Einstellungen
-wildcard_config_mytextfield_label = Test-Feld
-wildcard_config_mytextfield_notice = Notiz, die etwas erklärt und bspw. einen Standardwert nennt. Hier: <code>Test</code>
+wildcard_config_starttag_label = Start-Marker
+wildcard_config_starttag_notice = z.B. <code>{{ </code>
+wildcard_config_endtag_label = End-Marker
+wildcard_config_endtag_notice = z.B. <code> }}</code>
 
 # YForm Tabellen-Übersetzung
 wildcard_package = Package (AddOn)
 wildcard_wildcard = Platzhalter
-wildcard_text_1 = ###Sprache1###
-wildcard_text_2 = ###Sprache2###
-wildcard_text_3 = ###Sprache3###
-wildcard_text_4 = ###Sprache4###
-wildcard_text_5 = ###Sprache5###
-wildcard_text_6 = ###Sprache6###
+wildcard_text_de = DE
+wildcard_text_en = EN
+wildcard_text_fr = FR
+wildcard_text_es = ES
 wildcard_createdate = Erstellt am...
 wildcard_createuser = Erstellt von...
 wildcard_updatedate = Zuletzt geändert am...
