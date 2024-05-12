@@ -6,7 +6,7 @@ use rex;
 use rex_clang;
 use rex_config;
 use rex_extension_point;
-use rex_sql;
+use rex_sql_table;
 use rex_user;
 use rex_yform_manager_dataset;
 
@@ -164,17 +164,17 @@ class Wildcard extends rex_yform_manager_dataset
 
     /* Extension Points */
 
-    public static function removeClangColumn(\rex_extension_point $ep) :void
-    { 
-        $table = \rex_sql_table::get(\rex::getTable('wildcard'));
+    public static function removeClangColumn(rex_extension_point $ep): void
+    {
+        $table = rex_sql_table::get(rex::getTable('wildcard'));
         $table->removeColumn($ep->getParam('clang')->getCode());
         $table->ensure();
     }
-    public static function addClangColumn(\rex_extension_point $ep) :void
-    { 
-        $table = \rex_sql_table::get(\rex::getTable('wildcard'));
+
+    public static function addClangColumn(rex_extension_point $ep): void
+    {
+        $table = rex_sql_table::get(rex::getTable('wildcard'));
         $table->ensureColumn($ep->getParam('clang')->getCode());
         $table->ensure();
     }
-
 }
