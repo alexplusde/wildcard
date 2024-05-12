@@ -6,15 +6,14 @@ use rex_config;
 
 class Sync
 {
+    /*
+     * WIP
 
-/*
- * WIP
-
-    public static function sync()
-    {
-        // Prüfe, ob die Datei neuer ist als der Zeitstempel in der Datenbank.
-        if (date(rex_config::get('wildcard', 'syncdatestamp') >= date())) {
+        public static function sync()
+        {
+            // Prüfe, ob die Datei neuer ist als der Zeitstempel in der Datenbank.
+            if (date(rex_config::get('wildcard', 'syncdatestamp') >= date())) {
+            }
         }
-    }
-*/
+    */
 }
