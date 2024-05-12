@@ -37,7 +37,9 @@ page:
             perm: wildcard[docs]
 
 default_config:
-    field: 'Test'
+    syncdatestamp: ''
+    open_tag: '{{'
+    close_tag: '}}'
 
 installer_ignore:
 - .git

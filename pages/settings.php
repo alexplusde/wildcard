@@ -6,9 +6,13 @@ $addon = rex_addon::get('wildcard');
 
 $form = rex_config_form::factory($addon->getName());
 
-$field = $form->addInputField('text', 'mytextfield', null, ['class' => 'form-control']);
-$field->setLabel(rex_i18n::msg('wildcard_config_mytextfield_label'));
-$field->setNotice(rex_i18n::msg('wildcard_config_mytextfield_notice'));
+$field = $form->addInputField('text', 'opentag', null, ['class' => 'form-control']);
+$field->setLabel(rex_i18n::msg('wildcard_config_opentag_label'));
+$field->setNotice(rex_i18n::msg('wildcard_config_opentag_notice'));
+
+$field = $form->addInputField('text', 'closetag', null, ['class' => 'form-control']);
+$field->setLabel(rex_i18n::msg('wildcard_config_closetag_label'));
+$field->setNotice(rex_i18n::msg('wildcard_config_closetag_notice'));
 
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'edit', false);
