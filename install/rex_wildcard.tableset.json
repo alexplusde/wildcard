@@ -3,10 +3,10 @@
         "table": {
             "status": 1,
             "table_name": "rex_wildcard",
-            "name": "rex_wildcard",
+            "name": "translate:wildcard_table",
             "description": "",
             "list_amount": 50,
-            "list_sortfield": "id",
+            "list_sortfield": "wildcard",
             "list_sortorder": "ASC",
             "search": 1,
             "hidden": 1,
