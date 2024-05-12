@@ -55,11 +55,11 @@
                 "no_db": "0",
                 "notice": "",
                 "append": "",
-                "prepend": "<i fa fa-image fa-image-o\"><\/i>"
+                "prepend": "<i class=\"fa fa-language\"><\/i>"
             },
             {
                 "table_name": "rex_wildcard",
-                "prio": 4,
+                "prio": 5,
                 "type_id": "value",
                 "type_name": "datestamp",
                 "db_type": "datetime",
@@ -75,7 +75,7 @@
             },
             {
                 "table_name": "rex_wildcard",
-                "prio": 5,
+                "prio": 6,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
@@ -93,7 +93,7 @@
             },
             {
                 "table_name": "rex_wildcard",
-                "prio": 6,
+                "prio": 7,
                 "type_id": "value",
                 "type_name": "datestamp",
                 "db_type": "datetime",
@@ -109,7 +109,7 @@
             },
             {
                 "table_name": "rex_wildcard",
-                "prio": 7,
+                "prio": 8,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
