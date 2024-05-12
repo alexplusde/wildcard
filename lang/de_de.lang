@@ -12,10 +12,14 @@ wildcard_config_mytextfield_label = Test-Feld
 wildcard_config_mytextfield_notice = Notiz, die etwas erklärt und bspw. einen Standardwert nennt. Hier: <code>Test</code>
 
 # YForm Tabellen-Übersetzung
-wildcard_package = REDAXO-Package (AddOn)
+wildcard_package = Package (AddOn)
 wildcard_wildcard = Platzhalter
 wildcard_text_1 = ###Sprache1###
-wildcard_text_en = ###Sprache2###
+wildcard_text_2 = ###Sprache2###
+wildcard_text_3 = ###Sprache3###
+wildcard_text_4 = ###Sprache4###
+wildcard_text_5 = ###Sprache5###
+wildcard_text_6 = ###Sprache6###
 wildcard_createdate = Erstellt am...
 wildcard_createuser = Erstellt von...
 wildcard_updatedate = Zuletzt geändert am...
