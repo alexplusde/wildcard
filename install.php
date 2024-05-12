@@ -1,31 +1,23 @@
 <?php
 
 /* Tablesets aktualisieren */
-$addon = rex_addon::get('blaupause');
+$addon = rex_addon::get('wildcard');
 
 if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {
-    rex_yform_manager_table_api::importTablesets(rex_file::get(rex_path::addon($addon->getName(), 'install/rex_blaupause.tableset.json')));
+    rex_yform_manager_table_api::importTablesets(rex_file::get(rex_path::addon($addon->getName(), 'install/rex_wildcard.tableset.json')));
     rex_yform_manager_table::deleteCache();
 }
 
-/*
-$modules = scandir(rex_path::addon("blaupause")."module");
-
-foreach ($modules as $module) {
-    if ($module == "." || $module == "..") {
-        continue;
-    }
-    $module_array = json_decode(rex_file::get(rex_path::addon("blaupause")."module/".$module), 1);
-
-    rex_sql::factory()->setDebug(0)->setTable("rex_module")
-    ->setValue("name", $module_array['name'])
-    ->setValue("key", $module_array['key'])
-    ->setValue("input", $module_array['input'])
-    ->setValue("output", $module_array['output'])
-    ->setValue("createuser", "")
-    ->setValue("updateuser", "blaupause")
-    ->setValue("createdate", date("Y-m-d H:i:s"))
-    ->setValue("updatedate", date("Y-m-d H:i:s"))
-    ->insertOrUpdate();
-}
-*/
+rex_sql_table::get(rex::getTable('wildcard'))
+->ensurePrimaryIdColumn()
+->ensureColumn(new rex_sql_column('package', 'varchar(191)', false, 'project'))
+->ensureColumn(new rex_sql_column('wildcard', 'varchar(191)', false, ''))
+->ensureColumn(new rex_sql_column('text_1', 'text', true))
+->ensureColumn(new rex_sql_column('createdate', 'datetime'))
+->ensureColumn(new rex_sql_column('createuser', 'varchar(191)', false, ''))
+->ensureColumn(new rex_sql_column('updatedate', 'datetime'))
+->ensureColumn(new rex_sql_column('updateuser', 'varchar(191)', false, ''))
+->ensureIndex(new rex_sql_index('package_wildcard', ['package', 'wildcard'], rex_sql_index::UNIQUE))
+->ensureIndex(new rex_sql_index('wildcard', ['wildcard']))
+->ensureIndex(new rex_sql_index('package', ['package']))
+->ensure();

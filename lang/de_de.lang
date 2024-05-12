@@ -1,16 +1,22 @@
-blaupause_title = Blaupause
+wildcard_title = Sprachen
 
-blaupause_table = Blaupause
-blaupause_settings = Einstellungen
-blaupause_docs = Hilfe
+wildcard_table = wildcard
+wildcard_settings = Einstellungen
+wildcard_docs = Hilfe
 
 # FriendsOfREDAXO-Addons können bei YTraduco zur Übersetzung eingereicht werden
 
 # Konfigurationsformulare
-blaupause_config = Einstellungen
-blaupause_config_mytextfield_label = Test-Feld
-blaupause_config_mytextfield_notice = Notiz, die etwas erklärt und bspw. einen Standardwert nennt. Hier: <code>Test</code>
+wildcard_config = Einstellungen
+wildcard_config_mytextfield_label = Test-Feld
+wildcard_config_mytextfield_notice = Notiz, die etwas erklärt und bspw. einen Standardwert nennt. Hier: <code>Test</code>
 
 # YForm Tabellen-Übersetzung
-blaupause_table_name_label = Name
-blaupause_table_name_notice = Notiz, die etwas erklärt und auch einen Beispielwert nennen kann, z.B.: <code>Mein Name</code> 
+wildcard_package = REDAXO-Package (AddOn)
+wildcard_wildcard = Platzhalter
+wildcard_text_1 = ###Sprache1###
+wildcard_text_en = ###Sprache2###
+wildcard_createdate = Erstellt am...
+wildcard_createuser = Erstellt von...
+wildcard_updatedate = Zuletzt geändert am...
+wildcard_updateuser = Zuletzt geändert von...
