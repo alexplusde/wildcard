@@ -1,3 +1,3 @@
 <?php
 
-rex_config::removeNamespace("wildcard");
+rex_config::removeNamespace('wildcard');
