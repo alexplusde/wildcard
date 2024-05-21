@@ -24,3 +24,7 @@ if (rex::isBackend() && rex::getUser()) {
     rex_extension::register('CLANG_ADDED', 'Alexplusde\Wildcard\Wildcard::addClangColumn');
     rex_extension::register('CLANG_DELETED', 'Alexplusde\Wildcard\Wildcard::removeClangColumn');
 }
+
+if(rex::isDebugMode() && rex_addon::get('developer')->isAvailable()) {
+    FragmentsScanner::scan();
+}
