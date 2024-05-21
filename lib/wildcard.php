@@ -22,6 +22,7 @@ class Wildcard extends rex_yform_manager_dataset
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
+            ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, name ASC")
             ->findOne();
         if ($wildcard) {
             return $wildcard->getText($clang_code);
