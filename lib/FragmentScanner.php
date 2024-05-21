@@ -2,27 +2,25 @@
 
 namespace Alexplusde\Wildcard;
 
+use function array_key_exists;
+
+use const GLOB_BRACE;
+use const GLOB_ONLYDIR;
+use const JSON_PRETTY_PRINT;
+
 class FragmentsScanner
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $addonDir;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $wildcardFile;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     private $wildcardContent;
 
     /**
      * FragmentsScanner constructor.
-     *
-     * @param string $addonDir
      */
     public function __construct(string $addonDir)
     {
@@ -34,8 +32,6 @@ class FragmentsScanner
 
     /**
      * Liefert alle Fragment-Dateien, die Platzhalter enthalten könnten.
-     *
-     * @return array
      */
     public function getFiles(): array
     {
@@ -54,8 +50,6 @@ class FragmentsScanner
 
     /**
      * Gibt den Inhalt der Wildcard-Datei als PHP-Array zurück.
-     *
-     * @return array
      */
     private function getWildcardContent(): array
     {
@@ -64,9 +58,6 @@ class FragmentsScanner
 
     /**
      * Überprüft, ob der Key bereits in Wildcard vorhanden ist.
-     *
-     * @param string $key
-     * @return bool
      */
     public function keyExists(string $key): bool
     {
@@ -75,15 +66,13 @@ class FragmentsScanner
 
     /**
      * Fügt den Key zu den Wildcards hinzu.
-     *
-     * @param string $key
      */
     public function addKey(string $key): void
     {
         if (!$this->keyExists($key)) {
             $this->wildcardContent['wildcards'][$key] = [
                 'timestamp' => date('Y-m-d H:i:s'),
-                'translations' => []
+                'translations' => [],
             ];
         }
     }
@@ -98,15 +87,13 @@ class FragmentsScanner
 
     /**
      * Führt die Scan-Funktion für alle Addons oder ein spezifisches Addon aus und aktualisiert die Wildcard-Dateien.
-     *
-     * @param string $dir
      */
     public static function scan(string $dir = '/www/redaxo/src/addons/*'): void
     {
         $directories = glob($dir, GLOB_ONLYDIR | GLOB_BRACE);
 
         foreach ($directories as $dir) {
-            $scanner = new FragmentsScanner($dir);
+            $scanner = new self($dir);
             $files = $scanner->getFiles();
             foreach ($files as $file) {
                 $content = file_get_contents($file);
