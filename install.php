@@ -54,7 +54,6 @@ $table = $table->ensurePrimaryIdColumn();
 $table = $table->ensureColumn(new rex_sql_column('package', 'varchar(191)', false, 'project'));
 $table = $table->ensureColumn(new rex_sql_column('wildcard', 'varchar(191)', false, ''));
 foreach (rex_clang::getAll() as $clang) {
-    $table = $table->ensureColumn(new rex_sql_column('text_' . $clang->getId(), 'text', true));
     $table = $table->ensureColumn(new rex_sql_column('text_' . rex_string::normalize($clang->getCode()), 'text', true));
 }
 $table = $table->ensureColumn(new rex_sql_column('createdate', 'datetime'));

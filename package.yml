@@ -1,5 +1,5 @@
 package: wildcard
-version: '0.1.0-dev-2024-05-12'
+version: '0.1.0-2024-05-12'
 author: 'Alexander Walther'
 supportpage: https://github.com/alexplusde/wildcard
 
@@ -38,8 +38,8 @@ page:
 
 default_config:
     syncdatestamp: ''
-    open_tag: '{{'
-    close_tag: '}}'
+    opentag: '{{'
+    closetag: '}}'
 
 installer_ignore:
 - .git

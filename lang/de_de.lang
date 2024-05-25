@@ -6,19 +6,24 @@ wildcard_docs = Hilfe
 
 # Konfigurationsformulare
 wildcard_config = Einstellungen
-wildcard_config_starttag_label = Start-Marker
-wildcard_config_starttag_notice = z.B. <code>{{ </code>
-wildcard_config_endtag_label = End-Marker
-wildcard_config_endtag_notice = z.B. <code> }}</code>
+wildcard_config_opentag_label = Start-Marker
+wildcard_config_opentag_notice = z.B. <code>{{ </code>
+wildcard_config_closetag_label = End-Marker
+wildcard_config_closetag_notice = z.B. <code> }}</code>
 
 # YForm Tabellen-Übersetzung
 wildcard_package = Package (AddOn)
 wildcard_wildcard = Platzhalter
 wildcard_text_de = DE
+wildcard_text_de_DE = de_DE
 wildcard_text_en = EN
+wildcard_text_en_GB = en_GB
 wildcard_text_fr = FR
 wildcard_text_es = ES
 wildcard_createdate = Erstellt am...
 wildcard_createuser = Erstellt von...
 wildcard_updatedate = Zuletzt geändert am...
 wildcard_updateuser = Zuletzt geändert von...
+
+wildcard_quicknavigation_search_button = Suchen
+wildcard_quicknavigation_search_placeholder = Platzhalter oder Text eingeben 
