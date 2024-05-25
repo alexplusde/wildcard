@@ -1,6 +1,6 @@
 <?php
 
-echo rex_view::title(rex_i18n::msg('wildcard_title'));
+// echo rex_view::title(rex_i18n::msg('wildcard_title'));
 
 $addon = rex_addon::get('wildcard');
 
