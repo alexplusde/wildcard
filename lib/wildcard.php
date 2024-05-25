@@ -17,17 +17,16 @@ class Wildcard extends rex_yform_manager_dataset
         return $field . $separator . rex_clang::getCurrentId();
     }
 
-    public static function findByWildcard(string $package = '', string $wildcard): ?self
+    public static function findByWildcard(string $package, string $wildcard): ?self
     {
-       return self::query()
-            ->where('wildcard', $wildcard)
-            ->where('package', $package)
-            ->findOne();
+        return self::query()
+             ->where('wildcard', $wildcard)
+             ->where('package', $package)
+             ->findOne();
     }
 
     public static function findWildcard(string $wildcard, mixed $clang_code = null)
     {
-    
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
