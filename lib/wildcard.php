@@ -17,12 +17,12 @@ class Wildcard extends rex_yform_manager_dataset
         return $field . $separator . rex_clang::getCurrentId();
     }
 
-    public static function findByWildcard(string $package, string $wildcard): ?self
+    public static function findByWildcard(string $package = '', string $wildcard): ?self
     {
-        return self::query()
-             ->where('wildcard', $wildcard)
-             ->where('package', $package)
-             ->findOne();
+       return self::query()
+            ->where('wildcard', $wildcard)
+            ->where('package', $package)
+            ->findOne();
     }
 
     public static function findWildcard(string $wildcard, mixed $clang_code = null)
@@ -30,13 +30,14 @@ class Wildcard extends rex_yform_manager_dataset
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
-            ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, wildcard")
+            ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, name ASC")
             ->findOne();
         if ($wildcard) {
             return $wildcard->getText($clang_code);
         }
         return '';
     }
+
 
     public static function parse(string $text, ?int $clang_code = null)
     {
@@ -187,5 +188,14 @@ class Wildcard extends rex_yform_manager_dataset
         $table = rex_sql_table::get(rex::getTable('wildcard'));
         $table->ensureColumn($ep->getParam('clang')->getCode());
         $table->ensure();
+    }
+
+    public static function packageChoices(): array
+    {
+        $choices = [];
+        foreach (\rex_package::getRegisteredPackages() as $package) {
+            $choices[$package->getName()] = $package->getName();
+        }
+        return $choices;
     }
 }

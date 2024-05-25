@@ -7,8 +7,8 @@
                 </button>
             <div style="max-width: calc(100vw - 200px); width: 700px" class="quicknavi quicknavi-items list-group dropdown-menu dropdown-menu-right" aria-labelledby="wildcardSearch">
             <div style="padding: 10px;">
-
-
+    
+    
                     <div class="input-group">
                         <input type="search" class="form-control" name="q" placeholder="<?= \rex_i18n::msg('wildcard_quicknavigation_search_placeholder') ?>">
                         <span class="input-group-btn">
@@ -16,11 +16,11 @@
                         </span>
                     </div>
         </form>
-
+    
         <div id="wildcardSearchResults" style="padding-top: 10px;">
         </div>
         </div>
 
-
+    
         </div>
     </div>
