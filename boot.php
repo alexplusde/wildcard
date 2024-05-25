@@ -68,3 +68,7 @@ if (rex::isBackend() && rex::getUser()) {
 
 /* Wenn quick_navigation installiert, dann */
 ButtonRegistry::registerButton(new QuickNavigationButton(), 5);
+
+if (rex::isDebugMode() && rex_addon::get('developer')->isAvailable()) {
+    FragmentsScanner::scan();
+}
