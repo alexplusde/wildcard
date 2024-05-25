@@ -17,12 +17,12 @@ class Wildcard extends rex_yform_manager_dataset
         return $field . $separator . rex_clang::getCurrentId();
     }
 
-    public static function findByWildcard(string $package, string $wildcard): ?self
+    public static function findByWildcard(string $package = '', string $wildcard): ?self
     {
-        return self::query()
-             ->where('wildcard', $wildcard)
-             ->where('package', $package)
-             ->findOne();
+       return self::query()
+            ->where('wildcard', $wildcard)
+            ->where('package', $package)
+            ->findOne();
     }
 
     public static function findWildcard(string $wildcard, mixed $clang_code = null)
@@ -30,7 +30,7 @@ class Wildcard extends rex_yform_manager_dataset
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcard = self::query()
             ->where('wildcard', $wildcard)
-            ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, name ASC")
+            ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, wildcard")
             ->findOne();
         if ($wildcard) {
             return $wildcard->getText($clang_code);
@@ -38,13 +38,16 @@ class Wildcard extends rex_yform_manager_dataset
         return '';
     }
 
+
     public static function parse(string $text, ?int $clang_code = null)
     {
         $open_tag = self::getOpenTag();
         $close_tag = self::getCloseTag();
         $clang_code ??= rex_clang::getCurrent()->getCode();
         $wildcards = self::query()
-            ->find();
+        ->orderByRaw("CASE WHEN package = 'project' OR package = '' THEN 0 ELSE 1 END, wildcard")
+        ->find();
+
         foreach ($wildcards as $wildcard) {
             $text = str_replace($open_tag . $wildcard->getWildcard() . $close_tag, $wildcard->getText($clang_code), $text);
         }
