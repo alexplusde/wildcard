@@ -6,6 +6,7 @@ use rex;
 use rex_clang;
 use rex_config;
 use rex_extension_point;
+use rex_package;
 use rex_sql_table;
 use rex_user;
 use rex_yform_manager_dataset;
@@ -17,12 +18,12 @@ class Wildcard extends rex_yform_manager_dataset
         return $field . $separator . rex_clang::getCurrentId();
     }
 
-    public static function findByWildcard(string $package = '', string $wildcard): ?self
+    public static function findByWildcard(string $package, string $wildcard): ?self
     {
-       return self::query()
-            ->where('wildcard', $wildcard)
-            ->where('package', $package)
-            ->findOne();
+        return self::query()
+             ->where('wildcard', $wildcard)
+             ->where('package', $package)
+             ->findOne();
     }
 
     public static function findWildcard(string $wildcard, mixed $clang_code = null)
@@ -37,7 +38,6 @@ class Wildcard extends rex_yform_manager_dataset
         }
         return '';
     }
-
 
     public static function parse(string $text, ?int $clang_code = null)
     {
@@ -193,7 +193,7 @@ class Wildcard extends rex_yform_manager_dataset
     public static function packageChoices(): array
     {
         $choices = [];
-        foreach (\rex_package::getRegisteredPackages() as $package) {
+        foreach (rex_package::getRegisteredPackages() as $package) {
             $choices[$package->getName()] = $package->getName();
         }
         return $choices;

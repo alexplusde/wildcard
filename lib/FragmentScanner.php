@@ -5,47 +5,43 @@ namespace Alexplusde\Wildcard;
 use rex_file;
 use rex_path;
 
+use function array_key_exists;
+
+use const DIRECTORY_SEPARATOR;
+use const GLOB_BRACE;
+use const JSON_PRETTY_PRINT;
+
 class FragmentScanner
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $packageDir;
-    /**
-     * @var string
-     */
+    /** @var string */
     private $wildcardFile;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     private $wildcardContent;
 
     /**
      * FragmentScanner constructor.
-     *
-     * @param string $packageName
      */
     public function __construct(string $packageDir)
     {
-        if(!is_dir($packageDir)) {
+        if (!is_dir($packageDir)) {
             return;
         }
         $this->packageDir = $packageDir;
-        $this->wildcardFile = $packageDir . 'wildcard'.\DIRECTORY_SEPARATOR.'translations.json';
+        $this->wildcardFile = $packageDir . 'wildcard' . DIRECTORY_SEPARATOR . 'translations.json';
         $this->wildcardContent = $this->getWildcardContent();
     }
 
     /**
      * Liefert alle Fragment-Dateien, die Platzhalter enthalten könnten.
-     *
-     * @return array
      */
     public function getFiles(): array
     {
         return array_merge(
-            glob($this->packageDir . 'fragments' . \DIRECTORY_SEPARATOR . '*.php', GLOB_BRACE),
-            glob($this->packageDir . 'fragments' . \DIRECTORY_SEPARATOR . '**' . \DIRECTORY_SEPARATOR . '*.php', GLOB_BRACE)
+            glob($this->packageDir . 'fragments' . DIRECTORY_SEPARATOR . '*.php', GLOB_BRACE),
+            glob($this->packageDir . 'fragments' . DIRECTORY_SEPARATOR . '**' . DIRECTORY_SEPARATOR . '*.php', GLOB_BRACE),
         );
     }
 
@@ -61,8 +57,6 @@ class FragmentScanner
 
     /**
      * Gibt den Inhalt der Wildcard-Datei als PHP-Array zurück.
-     *
-     * @return array
      */
     private function getWildcardContent(): ?array
     {
@@ -71,13 +65,10 @@ class FragmentScanner
 
     /**
      * Überprüft, ob der Key bereits in Wildcard vorhanden ist.
-     *
-     * @param string $key
-     * @return bool
      */
     public function keyExists(string $key): bool
     {
-        if(!isset($this->wildcardContent['wildcards'])) {
+        if (!isset($this->wildcardContent['wildcards'])) {
             return false;
         }
         return array_key_exists($key, $this->wildcardContent['wildcards']);
@@ -85,15 +76,13 @@ class FragmentScanner
 
     /**
      * Fügt den Key zu den Wildcards hinzu.
-     *
-     * @param string $key
      */
     public function addKey(string $key): void
     {
         if (!$this->keyExists($key)) {
             $this->wildcardContent['wildcards'][$key] = [
                 'timestamp' => date('Y-m-d H:i:s'),
-                'translations' => []
+                'translations' => [],
             ];
         }
     }
@@ -109,18 +98,16 @@ class FragmentScanner
 
     /**
      * Führt die Scan-Funktion für alle Addons oder ein spezifisches Addon aus und aktualisiert die Wildcard-Dateien.
-     *
-     * @param string $dir
      */
-    public static function scan(string $packageName = null): void
+    public static function scan(?string $packageName = null): void
     {
         $dirs = glob(rex_path::addon('*'));
-        if($packageName) {
+        if ($packageName) {
             $dirs = [rex_path::addon($packageName)];
         }
 
         foreach ($dirs as $dir) {
-            $scanner = new FragmentScanner($dir);
+            $scanner = new self($dir);
             $files = $scanner->getFiles();
             foreach ($files as $file) {
                 $content = rex_file::get($file);
