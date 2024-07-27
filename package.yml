@@ -20,7 +20,7 @@ page:
     prio: 75
     perm: wildcard[]
     subpages:
-        wildcard:
+        entry:
             title: translate:wildcard_wildcard
             icon: rex-icon fa-gear
             perm: wildcard[]
