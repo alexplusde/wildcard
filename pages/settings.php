@@ -21,7 +21,6 @@ $select = $field->getSelect();
 $select->addOption(rex_i18n::msg('wildcard_config_sync_true'), true);
 $select->addOption(rex_i18n::msg('wildcard_config_sync_false'), false);
 
-
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'edit', false);
 $fragment->setVar('title', $addon->i18n('wildcard_config'), false);
