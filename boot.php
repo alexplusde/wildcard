@@ -84,14 +84,13 @@ if (rex::isBackend() && rex::getUser()) {
 /* Wenn quick_navigation installiert, dann */
 ButtonRegistry::registerButton(new QuickNavigationButton(), 5);
 
-
-if (rex::isBackend() && \rex_addon::get('wildcard') && \rex_addon::get('wildcard')->isAvailable() && !rex::isSafeMode()) {
+if (rex::isBackend() && rex_addon::get('wildcard') && rex_addon::get('wildcard')->isAvailable() && !rex::isSafeMode()) {
     $addon = rex_addon::get('wildcard');
     $page = $addon->getProperty('page');
 
-    if(!rex::getConsole()) {
+    if (!rex::getConsole()) {
         $_csrf_key = rex_yform_manager_table::get('rex_wildcard')->getCSRFKey();
-        
+
         $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
 
         $params = [];
