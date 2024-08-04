@@ -27,13 +27,13 @@ page:
         settings:
             title: translate:wildcard_settings
             icon: rex-icon fa-gear
-            itemclass: pull-right
+            itemClass: pull-right
             perm: admin
         docs:
             title: translate:wildcard_docs
             subPath: README.md
             icon: rex-icon fa-info-circle
-            itemclass: pull-right
+            itemClass: pull-right
             perm: wildcard[docs]
 
 default_config:
