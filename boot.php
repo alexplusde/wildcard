@@ -88,7 +88,7 @@ if (rex::isBackend() && rex_addon::get('wildcard') && rex_addon::get('wildcard')
     $addon = rex_addon::get('wildcard');
     $page = $addon->getProperty('page');
 
-    if (!rex::getConsole()) {
+    if (rex::isBackend() && !empty($_REQUEST)) {
         $_csrf_key = rex_yform_manager_table::get('rex_wildcard')->getCSRFKey();
 
         $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
