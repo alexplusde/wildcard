@@ -11,7 +11,7 @@ Wildcard lässt dich Platzhalter nutzen, die du in deinem Add-on oder Theme defi
 
 ## Geplante Features
 
-* Automatische Erkennung von Sprachdateien in Add-ons (Verzeichnis: `src/Add-ons/<Add-on>/wildcard/translate.json`).
+* Automatische Erkennung von Sprachdateien in Add-ons (Verzeichnis: `src/addons/<addon>/wildcard/translate.json`).
 * Kombination mit YForm_Inline-Add-on für eine einfachere Bearbeitung.
 
 ## Voraussetzungen
