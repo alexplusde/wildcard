@@ -1,26 +1,26 @@
 # 🎴 Wildcard - Ersetzungen von Sprach-Platzhaltern in REDAXO neu gedacht
 
-Wildcard lässt dich Platzhalter nutzen, die du in deinem Addon oder Theme definierst. Redakteure können dadurch deine Sprachübersetzungen nutzen oder mit eigenen überschreiben. Die Änderungen bleiben dann auch bei einem Update deines Addons erhalten.
+Wildcard lässt dich Platzhalter nutzen, die du in deinem Add-on oder Theme definierst. Redakteure können dadurch deine Sprachübersetzungen nutzen oder mit eigenen überschreiben. Die Änderungen bleiben dann auch bei einem Update deines Add-ons erhalten.
 
 ## Features
 
-* Ersetzung von Platzhaltern in jeder Sprache
-* Einfache Verwaltung durch YForm: Exportieren und importieren von Sprachdateien
-* Synchronisation von Wildcard-Dateien von Addons in das Projekt
-* Einfaches Kopieren und Einfügen von Platzhaltern
+* Ersetzung von Platzhaltern in jeder Sprache.
+* Einfache Verwaltung durch YForm: Exportieren und importieren von Sprachdateien.
+* Synchronisation von Wildcard-Dateien von Add-ons in das Projekt.
+* Einfaches Kopieren und Einfügen von Platzhaltern.
 
 ## Geplante Features
 
-* Automatische Erkennung von Sprachdateien in Addons (Verzeichnis: `src/addons/<addon>/wildcard/translate.json`)
-* Kombination mit YForm_Inline-Addon für eine einfachere Bearbeitung
+* Automatische Erkennung von Sprachdateien in Add-ons (Verzeichnis: `src/addons/<addon>/wildcard/translate.json`).
+* Kombination mit YForm_Inline-Add-on für eine einfachere Bearbeitung.
 
 ## Voraussetzungen
 
-* Sprachkürzel  `de_de` oder `en_gb` in REDAXO-Sprachen hinterlegt
+* Sprachkürzel  `de_de` oder `en_gb` in REDAXO-Sprachen hinterlegt.
 
 ## Einstellungs-Seite
 
-* Geplant: Sprog-Modus (Standard): Platzhalter von Sprog werden ergänzt für eine einfachere Migration von Sprog zu Wildcard
+* Geplant: Sprog-Modus (Standard): Platzhalter von Sprog werden ergänzt für eine einfachere Migration von Sprog zu Wildcard.
 * Eigene Start-End-Marker setzen, z.B. `{{` und `}}` oder `[[` und `]]`.
 
 ## Lizenz
