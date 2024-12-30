@@ -1,13 +1,13 @@
 package: wildcard
-version: '1.0.0'
+version: '0.1.0-dev-2024-12-30'
 author: 'Alexander Walther'
 supportpage: https://github.com/alexplusde/wildcard
 
 
 requires:
     php:
-        version: '>8.2,<9'
-    redaxo: ^5.17
+        version: '>=8.3,<9'
+    redaxo: ^5.18
     packages:
         yform: "^4"
 
