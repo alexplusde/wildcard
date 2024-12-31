@@ -27,7 +27,12 @@ Wildcard lässt dich Platzhalter nutzen, die du in deinem Add-on oder Theme defi
 
 MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/wildcard/blob/master/LICENSE.md)  
 
-## Autoren
+## Autor
+
+**Friends Of REDAXO**
+[https://github.com/FriendsOfREDAXO](https://github.com/FriendsOfREDAXO)
+
+## Credits
 
 **Alexander Walther**  
 <http://www.alexplus.de>  
